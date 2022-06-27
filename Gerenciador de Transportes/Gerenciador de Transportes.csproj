@@ -12,8 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\gusta\Desktop\</PublishUrl>
+    <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,11 +22,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <PublisherName>Gustavo Fulber</PublisherName>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
-    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -49,19 +47,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <ManifestCertificateThumbprint>0BB4FA56425184BD5EEE53A6314B3AD49F172F1C</ManifestCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestKeyFile>Gerenciador de Transportes_TemporaryKey.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>true</SignManifests>
-  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ButtonCircle.FormsPlugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Plugins.Forms.ButtonCircle.2.0.3\lib\netstandard2.0\ButtonCircle.FormsPlugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -77,190 +75,319 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BancoDeDados.cs" />
-    <Compile Include="CadastoEmbarcador.cs">
+    <Compile Include="ConexaoBanco\BancoSelects\BancoEmpresas.cs" />
+    <Compile Include="ConexaoBanco\BancoSelects\BancoFilial.cs" />
+    <Compile Include="ConexaoBanco\BancoSelects\BancoMeioPagamento.cs" />
+    <Compile Include="ConexaoBanco\BancoSelects\BancoStatus.cs" />
+    <Compile Include="ConexaoBanco\BancoSelects\BancoUnidadeEmbarque.cs" />
+    <Compile Include="ConexaoBanco\BancoSelects\BancoEmbalagem.cs" />
+    <Compile Include="Telas\Motorista\CadastroMotorista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastoEmbarcador.Designer.cs">
-      <DependentUpon>CadastoEmbarcador.cs</DependentUpon>
+    <Compile Include="Telas\Motorista\CadastroMotorista.Designer.cs">
+      <DependentUpon>CadastroMotorista.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastrodeUsuário.cs">
+    <Compile Include="ConexaoBanco\BancoDeDados.cs" />
+    <Compile Include="ConexaoBanco\BancoEmbarcador.cs" />
+    <Compile Include="ConexaoBanco\BancoEmbarque.cs" />
+    <Compile Include="ConexaoBanco\BancoMotorista.cs" />
+    <Compile Include="ConexaoBanco\BancoPedido.cs" />
+    <Compile Include="ConexaoBanco\BancoRota.cs" />
+    <Compile Include="ConexaoBanco\BancoUsuario.cs" />
+    <Compile Include="ConexaoBanco\BancoVeiculo.cs" />
+    <Compile Include="Telas\Motorista\EditarMotorista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastrodeUsuário.Designer.cs">
-      <DependentUpon>CadastrodeUsuário.cs</DependentUpon>
+    <Compile Include="Telas\Motorista\EditarMotorista.Designer.cs">
+      <DependentUpon>EditarMotorista.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastroEmbarque.cs">
+    <Compile Include="Telas\Motorista\Motorista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroEmbarque.Designer.cs">
+    <Compile Include="Telas\Motorista\Motorista.Designer.cs">
+      <DependentUpon>Motorista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Embarcador\CadastroEmbarcador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Embarcador\CadastroEmbarcador.Designer.cs">
+      <DependentUpon>CadastroEmbarcador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Usuario\CadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Usuario\CadastroUsuario.Designer.cs">
+      <DependentUpon>CadastroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Embarque\CadastroEmbarque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Embarque\CadastroEmbarque.Designer.cs">
       <DependentUpon>CadastroEmbarque.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastroPedido.cs">
+    <Compile Include="Telas\Pedido\CadastroPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroPedido.Designer.cs">
+    <Compile Include="Telas\Pedido\CadastroPedido.Designer.cs">
       <DependentUpon>CadastroPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastroRota.cs">
+    <Compile Include="Telas\Rota\CadastroRota.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroRota.Designer.cs">
+    <Compile Include="Telas\Rota\CadastroRota.Designer.cs">
       <DependentUpon>CadastroRota.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastroVeiculos.cs">
+    <Compile Include="Telas\Usuario\EditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroVeiculos.Designer.cs">
-      <DependentUpon>CadastroVeiculos.cs</DependentUpon>
+    <Compile Include="Telas\Usuario\EditarUsuario.Designer.cs">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard.cs">
+    <Compile Include="Telas\Usuario\TrocarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard.Designer.cs">
+    <Compile Include="Telas\Usuario\TrocarSenha.Designer.cs">
+      <DependentUpon>TrocarSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Usuario\Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Usuario\Usuario.Designer.cs">
+      <DependentUpon>Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modal\ModalAlerta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Modal\ModalAlerta.Designer.cs">
+      <DependentUpon>ModalAlerta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modal\ModalErro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Modal\ModalErro.Designer.cs">
+      <DependentUpon>ModalErro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modal\ModalSucesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Modal\ModalSucesso.Designer.cs">
+      <DependentUpon>ModalSucesso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modal\ModalYN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Modal\ModalYN.Designer.cs">
+      <DependentUpon>ModalYN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modal\UsuarioSelecionado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Modal\UsuarioSelecionado.Designer.cs">
+      <DependentUpon>UsuarioSelecionado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Veiculo\CadastroVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Veiculo\CadastroVeiculo.Designer.cs">
+      <DependentUpon>CadastroVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ClassEmbarcadores.cs" />
+    <Compile Include="Classes\ClassEmbarque.cs" />
+    <Compile Include="Classes\ClassMotorista.cs" />
+    <Compile Include="Classes\ClassPedido.cs" />
+    <Compile Include="Classes\ClassRotas.cs" />
+    <Compile Include="Classes\ClassUsuario.cs" />
+    <Compile Include="Classes\ClassVeiculo.cs" />
+    <Compile Include="Telas\Dashboard\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Dashboard\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard_3.cs">
+    <Compile Include="Telas\Dashboard\Dashboard_3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard_3.Designer.cs">
+    <Compile Include="Telas\Dashboard\Dashboard_3.Designer.cs">
       <DependentUpon>Dashboard_3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard_2.cs">
+    <Compile Include="Telas\Dashboard\Dashboard_2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard_2.Designer.cs">
+    <Compile Include="Telas\Dashboard\Dashboard_2.Designer.cs">
       <DependentUpon>Dashboard_2.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditarPedido.cs">
+    <Compile Include="Telas\Pedido\EditarPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditarPedido.Designer.cs">
+    <Compile Include="Telas\Pedido\EditarPedido.Designer.cs">
       <DependentUpon>EditarPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditarRota.cs">
+    <Compile Include="Telas\Rota\EditarRota.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditarRota.Designer.cs">
+    <Compile Include="Telas\Rota\EditarRota.Designer.cs">
       <DependentUpon>EditarRota.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditarVeiculos.cs">
+    <Compile Include="Telas\Veiculo\EditarVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditarVeiculos.Designer.cs">
-      <DependentUpon>EditarVeiculos.cs</DependentUpon>
+    <Compile Include="Telas\Veiculo\EditarVeiculo.Designer.cs">
+      <DependentUpon>EditarVeiculo.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmbarqueEditar.cs">
+    <Compile Include="Telas\Embarque\EmbarqueEditar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmbarqueEditar.Designer.cs">
+    <Compile Include="Telas\Embarque\EmbarqueEditar.Designer.cs">
       <DependentUpon>EmbarqueEditar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Embarque.cs">
+    <Compile Include="Telas\Embarque\Embarque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Embarque.Designer.cs">
+    <Compile Include="Telas\Embarque\Embarque.Designer.cs">
       <DependentUpon>Embarque.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Interfaces\IClassRotas.cs" />
+    <Compile Include="Interfaces\IClassUsuario.cs" />
+    <Compile Include="Interfaces\IEmbarcadoresCs.cs" />
+    <Compile Include="Interfaces\IEmbarqueCs.cs" />
+    <Compile Include="Interfaces\IMotoristaCs.cs" />
+    <Compile Include="Interfaces\IPedidoCs.cs" />
+    <Compile Include="Interfaces\IVeiculoCs.cs" />
+    <Compile Include="Telas\Usuario\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Telas\Usuario\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="Telas\Utilitarias\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
+    <Compile Include="Telas\Utilitarias\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Motoristas.cs">
+    <Compile Include="Telas\Veiculo\VincularMotorista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Motoristas.Designer.cs">
-      <DependentUpon>Motoristas.cs</DependentUpon>
+    <Compile Include="Telas\Veiculo\VincularMotorista.Designer.cs">
+      <DependentUpon>VincularMotorista.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pedido.cs">
+    <Compile Include="Telas\Pedido\Pedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pedido.Designer.cs">
+    <Compile Include="Telas\Pedido\Pedido.Designer.cs">
       <DependentUpon>Pedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rotas.cs">
+    <Compile Include="Telas\Rota\Rota.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rotas.Designer.cs">
-      <DependentUpon>Rotas.cs</DependentUpon>
+    <Compile Include="Telas\Rota\Rota.Designer.cs">
+      <DependentUpon>Rota.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teste.cs">
+    <Compile Include="Telas\Utilitarias\Teste.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teste.Designer.cs">
+    <Compile Include="Telas\Utilitarias\Teste.Designer.cs">
       <DependentUpon>Teste.cs</DependentUpon>
     </Compile>
-    <Compile Include="Veiculos.cs">
+    <Compile Include="Telas\Veiculo\Veiculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Veiculos.Designer.cs">
-      <DependentUpon>Veiculos.cs</DependentUpon>
+    <Compile Include="Telas\Veiculo\Veiculo.Designer.cs">
+      <DependentUpon>Veiculo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CadastoEmbarcador.resx">
-      <DependentUpon>CadastoEmbarcador.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\Embarcador\CadastroEmbarcador.resx">
+      <DependentUpon>CadastroEmbarcador.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastrodeUsuário.resx">
-      <DependentUpon>CadastrodeUsuário.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\Motorista\CadastroMotorista.resx">
+      <DependentUpon>CadastroMotorista.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastroEmbarque.resx">
+    <EmbeddedResource Include="Telas\Motorista\EditarMotorista.resx">
+      <DependentUpon>EditarMotorista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Motorista\Motorista.resx">
+      <DependentUpon>Motorista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Usuario\CadastroUsuario.resx">
+      <DependentUpon>CadastroUsuario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Embarque\CadastroEmbarque.resx">
       <DependentUpon>CadastroEmbarque.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastroPedido.resx">
+    <EmbeddedResource Include="Telas\Pedido\CadastroPedido.resx">
       <DependentUpon>CadastroPedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastroRota.resx">
+    <EmbeddedResource Include="Telas\Rota\CadastroRota.resx">
       <DependentUpon>CadastroRota.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastroVeiculos.resx">
-      <DependentUpon>CadastroVeiculos.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\Usuario\EditarUsuario.resx">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard.resx">
+    <EmbeddedResource Include="Telas\Usuario\TrocarSenha.resx">
+      <DependentUpon>TrocarSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Usuario\Usuario.resx">
+      <DependentUpon>Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modal\ModalAlerta.resx">
+      <DependentUpon>ModalAlerta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modal\ModalErro.resx">
+      <DependentUpon>ModalErro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modal\ModalSucesso.resx">
+      <DependentUpon>ModalSucesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modal\ModalYN.resx">
+      <DependentUpon>ModalYN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modal\UsuarioSelecionado.resx">
+      <DependentUpon>UsuarioSelecionado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Veiculo\CadastroVeiculo.resx">
+      <DependentUpon>CadastroVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Dashboard\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard_2.resx">
+    <EmbeddedResource Include="Telas\Dashboard\Dashboard_2.resx">
       <DependentUpon>Dashboard_2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard_3.resx">
+    <EmbeddedResource Include="Telas\Dashboard\Dashboard_3.resx">
       <DependentUpon>Dashboard_3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditarPedido.resx">
+    <EmbeddedResource Include="Telas\Pedido\EditarPedido.resx">
       <DependentUpon>EditarPedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditarRota.resx">
+    <EmbeddedResource Include="Telas\Rota\EditarRota.resx">
       <DependentUpon>EditarRota.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditarVeiculos.resx">
-      <DependentUpon>EditarVeiculos.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\Veiculo\EditarVeiculo.resx">
+      <DependentUpon>EditarVeiculo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmbarqueEditar.resx">
+    <EmbeddedResource Include="Telas\Embarque\EmbarqueEditar.resx">
       <DependentUpon>EmbarqueEditar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Embarque.resx">
+    <EmbeddedResource Include="Telas\Embarque\Embarque.resx">
       <DependentUpon>Embarque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.pt-BR.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\Usuario\Login.pt-BR.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\Usuario\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="Telas\Utilitarias\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Motoristas.resx">
-      <DependentUpon>Motoristas.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\Veiculo\VincularMotorista.resx">
+      <DependentUpon>VincularMotorista.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pedido.resx">
+    <EmbeddedResource Include="Telas\Pedido\Pedido.resx">
       <DependentUpon>Pedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -271,17 +398,18 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Rotas.resx">
-      <DependentUpon>Rotas.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\Rota\Rota.resx">
+      <DependentUpon>Rota.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teste.resx">
+    <EmbeddedResource Include="Telas\Utilitarias\Teste.resx">
       <DependentUpon>Teste.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Veiculos.resx">
-      <DependentUpon>Veiculos.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\Veiculo\Veiculo.resx">
+      <DependentUpon>Veiculo.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Gerenciador de Transportes_TemporaryKey.pfx" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -296,6 +424,53 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\user-interface.png" />
+    <None Include="Resources\user-interface1.png" />
+    <None Include="Resources\caminhao-de-entrega.png" />
+    <None Include="Resources\caminhao.png" />
+    <None Include="Resources\pedido.png" />
+    <None Include="Resources\rota.png" />
+    <None Include="Resources\adicionar-usuario.png" />
+    <None Include="Resources\dashboard.png" />
+    <None Include="Resources\destinatario.png" />
+    <None Include="Resources\comentarios.png" />
+    <None Include="Resources\caminhao-de-entrega1.png" />
+    <None Include="Resources\sinal-de-seta-para-baixo-para-navegar.png" />
+    <None Include="Resources\seta-cima.png" />
+    <None Include="Resources\seta-baixo.png" />
+    <None Include="Resources\seta-baixo1.png" />
+    <None Include="Resources\seta-cima1.png" />
+    <None Include="Resources\caminhao1.png" />
+    <None Include="Resources\pedido1.png" />
+    <None Include="Resources\rota1.png" />
+    <None Include="Resources\adicionar-usuario1.png" />
+    <None Include="Resources\destinatario1.png" />
+    <None Include="Resources\comentarios1.png" />
+    <None Include="Resources\dashboard1.png" />
+    <None Include="Resources\caminhao-de-entrega2.png" />
+    <None Include="Resources\transscalcom.png" />
+    <None Include="Resources\confirme.png" />
+    <None Include="Resources\voltar.png" />
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\menu2.png" />
+    <None Include="Resources\menuu.png" />
+    <None Include="Resources\condutor.png" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\erro.png" />
+    <None Include="Resources\erro %282%29.png" />
+    <None Include="Resources\alerta.png" />
+    <None Include="Resources\erro2.png" />
+    <None Include="Resources\sucesso.png" />
+    <None Include="Resources\do-utilizador.png" />
+    <None Include="Resources\do-utilizador %281%29.png" />
+    <None Include="Resources\mudar.png" />
+    <None Include="Resources\lupa.png" />
+    <None Include="Resources\botao-excluir.png" />
+    <None Include="Resources\editar.png" />
+    <None Include="Resources\condutor %281%29.png" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+  </ItemGroup>
+  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
@@ -307,5 +482,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

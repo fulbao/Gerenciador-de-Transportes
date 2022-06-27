@@ -93,6 +93,7 @@
             this.CidadeDestino,
             this.EstadoDestino,
             this.columnHeader1,
+            this.sxxo,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
@@ -124,8 +125,7 @@
             this.columnHeader30,
             this.columnHeader31,
             this.columnHeader32,
-            this.columnHeader33,
-            this.sxxo});
+            this.columnHeader33});
             this.lv_embarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lv_embarque.FullRowSelect = true;
             this.lv_embarque.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -171,202 +171,169 @@
             // 
             // columnHeader2
             // 
-            this.columnHeader2.DisplayIndex = 7;
             this.columnHeader2.Text = "Pedido";
             this.columnHeader2.Width = 70;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.DisplayIndex = 8;
             this.columnHeader3.Tag = "Date";
             this.columnHeader3.Text = "Previsão Embarque";
             this.columnHeader3.Width = 150;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.DisplayIndex = 9;
             this.columnHeader4.Tag = "Date";
             this.columnHeader4.Text = "Data Embarque";
             this.columnHeader4.Width = 130;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.DisplayIndex = 10;
             this.columnHeader5.Tag = "Date";
             this.columnHeader5.Text = "Previsão Entrega";
             this.columnHeader5.Width = 140;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.DisplayIndex = 11;
             this.columnHeader6.Tag = "Date";
             this.columnHeader6.Text = "Data Entrega";
             this.columnHeader6.Width = 120;
             // 
             // columnHeader8
             // 
-            this.columnHeader8.DisplayIndex = 12;
             this.columnHeader8.Text = "Aceite";
             // 
             // columnHeader9
             // 
-            this.columnHeader9.DisplayIndex = 13;
             this.columnHeader9.Text = "Status";
             this.columnHeader9.Width = 130;
             // 
             // columnHeader10
             // 
-            this.columnHeader10.DisplayIndex = 14;
             this.columnHeader10.Text = "Placa Cavalo";
             this.columnHeader10.Width = 130;
             // 
             // columnHeader34
             // 
-            this.columnHeader34.DisplayIndex = 15;
             this.columnHeader34.Text = "Placa Carreta";
             this.columnHeader34.Width = 130;
             // 
             // columnHeader11
             // 
-            this.columnHeader11.DisplayIndex = 16;
             this.columnHeader11.Text = "Placa Segunda Carreta";
             this.columnHeader11.Width = 170;
             // 
             // columnHeader12
             // 
-            this.columnHeader12.DisplayIndex = 17;
             this.columnHeader12.Text = "Proprietário";
             this.columnHeader12.Width = 130;
             // 
             // columnHeader13
             // 
-            this.columnHeader13.DisplayIndex = 18;
             this.columnHeader13.Text = "Motorista";
             this.columnHeader13.Width = 130;
             // 
             // columnHeader14
             // 
-            this.columnHeader14.DisplayIndex = 19;
             this.columnHeader14.Text = "Frete Fiscal";
             this.columnHeader14.Width = 130;
             // 
             // columnHeader15
             // 
-            this.columnHeader15.DisplayIndex = 20;
             this.columnHeader15.Text = "ICMS";
             this.columnHeader15.Width = 130;
             // 
             // columnHeader16
             // 
-            this.columnHeader16.DisplayIndex = 21;
             this.columnHeader16.Text = "Frete Motorista";
             this.columnHeader16.Width = 130;
             // 
             // columnHeader17
             // 
-            this.columnHeader17.DisplayIndex = 22;
             this.columnHeader17.Text = "Adicional";
             this.columnHeader17.Width = 130;
             // 
             // columnHeader18
             // 
-            this.columnHeader18.DisplayIndex = 23;
             this.columnHeader18.Text = "Pedágio";
             this.columnHeader18.Width = 130;
             // 
             // columnHeader19
             // 
-            this.columnHeader19.DisplayIndex = 24;
             this.columnHeader19.Text = "Classificação/Descarga";
             this.columnHeader19.Width = 190;
             // 
             // columnHeader20
             // 
-            this.columnHeader20.DisplayIndex = 25;
             this.columnHeader20.Text = "Margem";
             this.columnHeader20.Width = 130;
             // 
             // columnHeader21
             // 
-            this.columnHeader21.DisplayIndex = 26;
             this.columnHeader21.Text = "Adto";
             this.columnHeader21.Width = 130;
             // 
             // columnHeader22
             // 
-            this.columnHeader22.DisplayIndex = 27;
             this.columnHeader22.Text = "Meio pgto";
             this.columnHeader22.Width = 130;
             // 
             // columnHeader23
             // 
-            this.columnHeader23.DisplayIndex = 28;
             this.columnHeader23.Text = "Meio pgto 2";
             this.columnHeader23.Width = 130;
             // 
             // columnHeader24
             // 
-            this.columnHeader24.DisplayIndex = 29;
             this.columnHeader24.Text = "Km";
             this.columnHeader24.Width = 130;
             // 
             // columnHeader25
             // 
-            this.columnHeader25.DisplayIndex = 30;
             this.columnHeader25.Text = "Cliente";
             this.columnHeader25.Width = 130;
             // 
             // columnHeader26
             // 
-            this.columnHeader26.DisplayIndex = 31;
             this.columnHeader26.Text = "Embarcador";
             this.columnHeader26.Width = 130;
             // 
             // columnHeader27
             // 
-            this.columnHeader27.DisplayIndex = 32;
             this.columnHeader27.Text = "Destinatário";
             this.columnHeader27.Width = 130;
             // 
             // columnHeader28
             // 
-            this.columnHeader28.DisplayIndex = 33;
             this.columnHeader28.Text = "Load";
             this.columnHeader28.Width = 130;
             // 
             // columnHeader29
             // 
-            this.columnHeader29.DisplayIndex = 34;
             this.columnHeader29.Text = "Mercadoria";
             this.columnHeader29.Width = 130;
             // 
             // columnHeader30
             // 
-            this.columnHeader30.DisplayIndex = 35;
             this.columnHeader30.Text = "Peso";
             this.columnHeader30.Width = 130;
             // 
             // columnHeader31
             // 
-            this.columnHeader31.DisplayIndex = 36;
             this.columnHeader31.Text = "Embalagem";
             this.columnHeader31.Width = 130;
             // 
             // columnHeader32
             // 
-            this.columnHeader32.DisplayIndex = 37;
             this.columnHeader32.Text = "Observação";
             this.columnHeader32.Width = 130;
             // 
             // columnHeader33
             // 
-            this.columnHeader33.DisplayIndex = 38;
             this.columnHeader33.Text = "Frota";
             this.columnHeader33.Width = 130;
             // 
             // sxxo
             // 
-            this.sxxo.DisplayIndex = 6;
             this.sxxo.Text = "Estado Destino";
             this.sxxo.Width = 130;
             // 
@@ -450,7 +417,7 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(950, 40);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
-            // EmbarqueGloria
+            // Embarque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -462,7 +429,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "EmbarqueGloria";
+            this.Name = "Embarque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.EmbarqueGloria_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

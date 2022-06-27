@@ -43,7 +43,7 @@ namespace Gerenciador_de_Transportes
             /*drop banco veiculos
              * try
             {
-                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
                 Conexao.Open();
 
@@ -58,7 +58,7 @@ namespace Gerenciador_de_Transportes
             }
             try
             {
-                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
                 Conexao.Open();
 
@@ -75,7 +75,7 @@ namespace Gerenciador_de_Transportes
             {
                 for (int i = 0; i < 100; i++)
                 {
-                    Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                    Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
                     Conexao.Open();
 
@@ -88,7 +88,7 @@ namespace Gerenciador_de_Transportes
             }
             catch (Exception ex)
             {
-            }*/
+            }
             for (int i = 0; i > -1; i++)
             {
                 string[] itens = new string[4];
@@ -129,11 +129,11 @@ namespace Gerenciador_de_Transportes
 
                 Comando.ExecuteNonQuery();
 
-                Conexao.Close();
+                Conexao.Close();*/
 
 
-            }
-        }
+        //}
+    }
 
         private void Teste_Load(object sender, EventArgs e)
         {

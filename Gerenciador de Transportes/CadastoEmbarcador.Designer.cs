@@ -46,7 +46,7 @@
             // tb_embarcador
             // 
             this.tb_embarcador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_embarcador.Location = new System.Drawing.Point(365, 74);
+            this.tb_embarcador.Location = new System.Drawing.Point(815, 73);
             this.tb_embarcador.Name = "tb_embarcador";
             this.tb_embarcador.Size = new System.Drawing.Size(174, 26);
             this.tb_embarcador.TabIndex = 1;
@@ -58,7 +58,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(393, 30);
+            this.label4.Location = new System.Drawing.Point(843, 29);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 20);
             this.label4.TabIndex = 97;
@@ -67,7 +67,7 @@
             // btn_cadastrar
             // 
             this.btn_cadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cadastrar.Location = new System.Drawing.Point(375, 315);
+            this.btn_cadastrar.Location = new System.Drawing.Point(825, 314);
             this.btn_cadastrar.Name = "btn_cadastrar";
             this.btn_cadastrar.Size = new System.Drawing.Size(152, 32);
             this.btn_cadastrar.TabIndex = 3;
@@ -78,7 +78,7 @@
             // btn_voltar
             // 
             this.btn_voltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_voltar.Location = new System.Drawing.Point(375, 565);
+            this.btn_voltar.Location = new System.Drawing.Point(825, 564);
             this.btn_voltar.Name = "btn_voltar";
             this.btn_voltar.Size = new System.Drawing.Size(152, 32);
             this.btn_voltar.TabIndex = 7;
@@ -101,7 +101,7 @@
             this.lv_embarcador.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lv_embarcador.Location = new System.Drawing.Point(12, 12);
             this.lv_embarcador.Name = "lv_embarcador";
-            this.lv_embarcador.Size = new System.Drawing.Size(311, 590);
+            this.lv_embarcador.Size = new System.Drawing.Size(739, 590);
             this.lv_embarcador.TabIndex = 100;
             this.lv_embarcador.UseCompatibleStateImageBehavior = false;
             this.lv_embarcador.View = System.Windows.Forms.View.Details;
@@ -109,17 +109,17 @@
             // col_Rota
             // 
             this.col_Rota.Text = "Embarcadores";
-            this.col_Rota.Width = 151;
+            this.col_Rota.Width = 330;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Destinatário";
-            this.columnHeader1.Width = 142;
+            this.columnHeader1.Width = 583;
             // 
             // btn_editar
             // 
             this.btn_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_editar.Location = new System.Drawing.Point(375, 377);
+            this.btn_editar.Location = new System.Drawing.Point(825, 376);
             this.btn_editar.Name = "btn_editar";
             this.btn_editar.Size = new System.Drawing.Size(152, 32);
             this.btn_editar.TabIndex = 4;
@@ -130,7 +130,7 @@
             // btn_deletar
             // 
             this.btn_deletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_deletar.Location = new System.Drawing.Point(375, 440);
+            this.btn_deletar.Location = new System.Drawing.Point(825, 439);
             this.btn_deletar.Name = "btn_deletar";
             this.btn_deletar.Size = new System.Drawing.Size(152, 32);
             this.btn_deletar.TabIndex = 5;
@@ -141,7 +141,7 @@
             // btn_usuario
             // 
             this.btn_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_usuario.Location = new System.Drawing.Point(375, 505);
+            this.btn_usuario.Location = new System.Drawing.Point(825, 504);
             this.btn_usuario.Name = "btn_usuario";
             this.btn_usuario.Size = new System.Drawing.Size(152, 32);
             this.btn_usuario.TabIndex = 6;
@@ -155,7 +155,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(392, 135);
+            this.label1.Location = new System.Drawing.Point(842, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 20);
             this.label1.TabIndex = 105;
@@ -165,7 +165,7 @@
             // tb_destinatario
             // 
             this.tb_destinatario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_destinatario.Location = new System.Drawing.Point(365, 181);
+            this.tb_destinatario.Location = new System.Drawing.Point(815, 180);
             this.tb_destinatario.Name = "tb_destinatario";
             this.tb_destinatario.Size = new System.Drawing.Size(174, 26);
             this.tb_destinatario.TabIndex = 2;
@@ -177,7 +177,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(569, 614);
+            this.ClientSize = new System.Drawing.Size(1009, 614);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_destinatario);
             this.Controls.Add(this.btn_usuario);

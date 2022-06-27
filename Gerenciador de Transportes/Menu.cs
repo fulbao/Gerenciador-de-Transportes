@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gerenciador_de_Transportes.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace Gerenciador_de_Transportes
     public partial class Menu : Form
     {
         string usuarioLogado;
+        private bool dropMenu;
         public Menu(string usuario)
         {
             InitializeComponent();
@@ -137,6 +139,40 @@ namespace Gerenciador_de_Transportes
                             "entre em contato:\n" +
                             "ghfulber@gmail.com ou\n" +
                             "(45) 99959-8011", "Feedback");
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (dropMenu)
+            {
+                button1.Image = Resources.seta_cima1; 
+                panelDropDown.Height += 10;
+                if (panelDropDown.Size == panelDropDown.MaximumSize )
+                {
+                    timer1.Stop();
+                    dropMenu = false;
+                }
+            }
+            else
+            {
+                button1.Image = Resources.seta_baixo1;
+                panelDropDown.Height -= 10;
+                if (panelDropDown.Size == panelDropDown.MinimumSize)
+                {
+                    timer1.Stop();
+                    dropMenu = true;
+                }
+            }
         }
     }
 }

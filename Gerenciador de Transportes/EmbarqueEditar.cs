@@ -15,45 +15,9 @@ namespace Gerenciador_de_Transportes
     {
         string contexto;
 
-        string[] listaPlacaCavalo = new string[1000];
+        List<VeiculoCs> veiculos = new List<VeiculoCs>();
 
-        string[] listaPlacaCarreta = new string[1000];
-
-        string[] listaPlacaCarretaDois = new string[1000];
-
-        string[] listaProprietario = new string[1000];
-
-        string[] listaMotorista = new string[1000];
-
-        string[] listaPedido = new string[1000];
-
-        string[] listaTipoDeRota = new string[1000];
-
-        string[] listaFreteFiscal = new string[1000];
-
-        string[] listaICMS = new string[1000];
-
-        string[] listaPedagio = new string[1000];
-
-        string[] listaClassificacao = new string[1000];
-
-        string[] listaKm = new string[1000];
-
-        string[] listaCliente = new string[1000];
-
-        string[] listaEmbarcador = new string[1000];
-
-        string[] listaEstadoEmbarcador = new string[1000];
-
-        string[] listaDestinatario = new string[1000];
-
-        string[] listaEstadoDestinatario = new string[1000];
-
-        string[] listaFreteMotorista = new string[1000];
-
-        string[] listaCidadeOrigem = new string[1000];
-
-        string[] listaCidadeDestino = new string[1000];
+        List<PedidoCs> pedidos = new List<PedidoCs>();
 
         string[] listaEmbarcadores = new string[1000];
 
@@ -69,12 +33,11 @@ namespace Gerenciador_de_Transportes
 
         private void tb_dataEntrega_ValueChanged(object sender, EventArgs e)
         {
-            tb_dataEntrega.Format = DateTimePickerFormat.Short;
-        }
 
+        }
         private void tb_dataEmbarque_ValueChanged(object sender, EventArgs e)
         {
-            tb_dataEmbarque.Format = DateTimePickerFormat.Short;
+
         }
         public bool leMotoristas(string placa)
         {
@@ -127,8 +90,6 @@ namespace Gerenciador_de_Transportes
                 return false;
             }
         }
-
-
         public Boolean retornaEmbarcador()
         {
             j = 0;
@@ -175,7 +136,6 @@ namespace Gerenciador_de_Transportes
                 return false;
             }
         }
-
         public void limpar()
         {
             sl_pedido.SelectedIndex = 0;
@@ -214,7 +174,6 @@ namespace Gerenciador_de_Transportes
             tb_aceite.SelectedIndex = 0;
 
         }
-
         public Boolean retornaVeiculo()
         {
             j = 0;
@@ -245,17 +204,7 @@ namespace Gerenciador_de_Transportes
 
                     if (deletado == "False")
                     {
-                        listaPlacaCavalo[j] = readerUsuario.GetString(1);
-
-                        listaPlacaCarreta[j] = readerUsuario.GetString(2);
-
-                        listaPlacaCarretaDois[j] = readerUsuario.GetString(3);
-
-                        listaProprietario[j] = readerUsuario.GetString(4);
-
-                        listaMotorista[j] = readerUsuario.GetString(5);
-
-                        j++;
+                        veiculos.Add(new VeiculoCs(readerUsuario.GetString(1).Trim(' '), readerUsuario.GetString(2), readerUsuario.GetString(3), readerUsuario.GetString(4), readerUsuario.GetString(5)));
                     }
 
                     conn.Close();
@@ -269,7 +218,6 @@ namespace Gerenciador_de_Transportes
                 return false;
             }
         }
-
         public Boolean retornaPedido()
         {
             j = 0;
@@ -300,37 +248,7 @@ namespace Gerenciador_de_Transportes
 
                     if (deletado == "False")
                     {
-                        listaPedido[k] = readerUsuarioe.GetString(1);
-
-                        listaTipoDeRota[k] = readerUsuarioe.GetString(2);
-
-                        listaFreteFiscal[k] = readerUsuarioe.GetString(3);
-
-                        listaICMS[k] = readerUsuarioe.GetString(4);
-
-                        listaPedagio[k] = readerUsuarioe.GetString(5);
-
-                        listaClassificacao[k] = readerUsuarioe.GetString(6);
-
-                        listaKm[k] = readerUsuarioe.GetString(7);
-
-                        listaCliente[k] = readerUsuarioe.GetString(8);
-
-                        listaEmbarcador[k] = readerUsuarioe.GetString(9);
-
-                        listaEstadoEmbarcador[k] = readerUsuarioe.GetString(10);
-
-                        listaDestinatario[k] = readerUsuarioe.GetString(11);
-
-                        listaEstadoDestinatario[k] = readerUsuarioe.GetString(12);
-
-                        listaFreteMotorista[k] = readerUsuarioe.GetString(13);
-
-                        listaCidadeOrigem[k] = readerUsuarioe.GetString(14);
-
-                        listaCidadeDestino[k] = readerUsuarioe.GetString(15);
-
-                        k++;
+                        pedidos.Add(new PedidoCs(readerUsuarioe.GetString(1).Trim(' '), readerUsuarioe.GetString(2), readerUsuarioe.GetString(3), readerUsuarioe.GetString(4), readerUsuarioe.GetString(5), readerUsuarioe.GetString(6), readerUsuarioe.GetString(7), readerUsuarioe.GetString(8), readerUsuarioe.GetString(9), readerUsuarioe.GetString(10), readerUsuarioe.GetString(11), readerUsuarioe.GetString(12), readerUsuarioe.GetString(13), readerUsuarioe.GetString(14), readerUsuarioe.GetString(15)));
                     }
 
                     conne.Close();
@@ -349,13 +267,12 @@ namespace Gerenciador_de_Transportes
             InitializeComponent();
 
             usuarioLogado = usuario;
-
+ 
             if (dataEntrega == "")
             {
                 tb_dataEntrega.Format = DateTimePickerFormat.Custom;
                 tb_dataEntrega.CustomFormat = " ";
-            }
-            else
+            } else
             {
                 this.dataEntrega = dataEntrega;
                 tb_dataEntrega.Text = dataEntrega;
@@ -364,13 +281,18 @@ namespace Gerenciador_de_Transportes
             {
                 tb_dataEmbarque.Format = DateTimePickerFormat.Custom;
                 tb_dataEmbarque.CustomFormat = " ";
-            }
-            else
+            } else
             {
                 this.dataEmbarque = dataEmbarque;
                 tb_dataEmbarque.Text = dataEmbarque;
             }
             Boolean retorno = retornaPedido();
+
+            List<PedidoCs> SortedListPedidos = pedidos.OrderBy(p => Convert.ToInt32(p.Pedido)).ToList();
+
+            pedidos.Clear();
+
+            pedidos = SortedListPedidos;
 
             if (!retorno)
             {
@@ -379,11 +301,23 @@ namespace Gerenciador_de_Transportes
             else
             {
                 sl_pedido.Items.Add("Selecionar");
-                for (int i = 0; i < k; i++)
+                for (int i = 0; i < pedidos.Count; i++)
                 {
-                    sl_pedido.Items.Add(listaPedido[i]);
-                    tb_cidadeOrigem.Text = "Selecione Rota";
-                    tb_cidadeDestino.Text = "Selecione Rota";
+                    sl_pedido.SelectedIndex = 0;
+                    sl_pedido.Items.Add(pedidos[i].Pedido);
+                    tb_freteFiscal.Text = "Selecione Pedido";
+                    tb_icms.Text = "Selecione Pedido";
+                    tb_pedagio.Text = "Selecione Pedido";
+                    tb_classificacao.Text = "Selecione Pedido";
+                    tb_km.Text = "Selecione Pedido";
+                    tb_cliente.Text = "Selecione Pedido";
+                    tb_embarcador.Text = "Selecione Pedido";
+                    tb_estadoOrigem.Text = "Selecione Pedido";
+                    tb_destinatario.Text = "Selecione Pedido";
+                    tb_estadoDestino.Text = "Selecione Pedido";
+                    tb_freteMotorista.Text = "Selecione Pedido";
+                    tb_cidadeOrigem.Text = "Selecione Pedido";
+                    tb_cidadeDestino.Text = "Selecione Pedido";
                 }
             }
 
@@ -395,11 +329,17 @@ namespace Gerenciador_de_Transportes
             }
             else
             {
+                List<VeiculoCs> SortedList = veiculos.OrderBy(o => o.PlacaCavalo).ToList();
+
+                veiculos.Clear();
+
+                veiculos = SortedList;
+
                 sl_placaCavalo.Items.Add("Selecionar");
-                for (int i = 0; i < j; i++)
+                for (int i = 0; i < veiculos.Count; i++)
                 {
                     sl_placaCavalo.SelectedIndex = 0;
-                    sl_placaCavalo.Items.Add(listaPlacaCavalo[i]);
+                    sl_placaCavalo.Items.Add(veiculos[i].PlacaCavalo);
                     tb_placaCarreta.Text = "Selecione Placa Cavalo";
                     tb_placaCarretaDois.Text = "Selecione Placa Cavalo";
                     tb_proprietario.Text = "Selecione Placa Cavalo";
@@ -407,18 +347,41 @@ namespace Gerenciador_de_Transportes
                 }
             }
             string selecionado;
+            selecionado = sl_pedido.Text;
+
+            for (int i = 0; i < pedidos.Count; i++)
+            {
+                if (selecionado == pedidos[i].Pedido)
+                {
+                    tb_freteFiscal.Text = pedidos[i].FreteFiscal;
+                    tb_icms.Text = pedidos[i].Icms;
+                    tb_pedagio.Text = pedidos[i].Pedagio;
+                    tb_classificacao.Text = pedidos[i].Classificacao;
+                    tb_km.Text = pedidos[i].Km;
+                    tb_cliente.Text = pedidos[i].Cliente;
+                    tb_embarcador.Text = pedidos[i].Embarcador;
+                    tb_estadoOrigem.Text = pedidos[i].EstadoEmbarcador;
+                    tb_destinatario.Text = pedidos[i].Destinatario;
+                    tb_estadoDestino.Text = pedidos[i].EstadoDestinatario;
+                    tb_freteMotorista.Text = pedidos[i].FreteMotorista;
+                    tb_cidadeOrigem.Text = pedidos[i].CidadeOrigem;
+                    tb_cidadeDestino.Text = pedidos[i].CidadeDestino;
+                    i = pedidos.Count;
+                }
+            }
+
             selecionado = sl_placaCavalo.Text;
             tb_motorista.Enabled = true;
 
-            for (int i = 0; i < listaPlacaCavalo.Length; i++)
+            for (int i = 0; i < veiculos.Count; i++)
             {
-                if (selecionado == listaPlacaCavalo[i])
+                if (selecionado == veiculos[i].PlacaCavalo)
                 {
-                    tb_placaCarreta.Text = listaPlacaCarreta[i];
-                    tb_placaCarretaDois.Text = listaPlacaCarretaDois[i];
-                    tb_proprietario.Text = listaProprietario[i];
-                    tb_motorista.Text = listaMotorista[i];
-                    i = listaPlacaCavalo.Length;
+                    tb_placaCarreta.Text = veiculos[i].PlacaCarreta;
+                    tb_placaCarretaDois.Text = veiculos[i].PlacaCarretaSegunda;
+                    tb_proprietario.Text = veiculos[i].Proprietario;
+                    tb_motorista.Text = veiculos[i].Motorista;
+                    i = veiculos.Count;
                 }
             }
             Boolean semUso = leMotoristas(sl_placaCavalo.Text);
@@ -432,6 +395,7 @@ namespace Gerenciador_de_Transportes
                     }
                 }
             }
+
             this.pedido = pedido;
             this.placaCavalo = placaCavalo;
             this.unidadeEmbarque = unidadeEmbarque;
@@ -502,125 +466,41 @@ namespace Gerenciador_de_Transportes
             tb_adicional.Text = adicional;
             tb_adiantamento.Text = adiantamento;
             tb_aceite.Text = aceite;
-            tb_previsaoEmbarque.Text = previsaoEmbarque;
-            tb_previsaoEntrega.Text = previsaoEntrega;
+            tb_previsaoEmbarque.CustomFormat = previsaoEmbarque;
+            tb_previsaoEntrega.CustomFormat = previsaoEntrega;
             this.contexto = contexto;
         }
-
         private void EmbarqueEditar_Load(object sender, EventArgs e)
         {
         }
-
         private void tb_adicional_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar != '1') && (e.KeyChar != '2') && (e.KeyChar != '3') && (e.KeyChar != '4') && (e.KeyChar != '5') && (e.KeyChar != '6') && (e.KeyChar != '7') && (e.KeyChar != '8') && (e.KeyChar != '9') && (e.KeyChar != '0') && (e.KeyChar != ',') && ((int)(e.KeyChar) != 8))
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
-        }
 
+        }
         private void tb_adiantamento_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar != '1') && (e.KeyChar != '2') && (e.KeyChar != '3') && (e.KeyChar != '4') && (e.KeyChar != '5') && (e.KeyChar != '6') && (e.KeyChar != '7') && (e.KeyChar != '8') && (e.KeyChar != '9') && (e.KeyChar != '0') && (e.KeyChar != ',') && ((int)(e.KeyChar) != 8))
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
-        }
 
+        }
         private void tb_peso_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar != '1') && (e.KeyChar != '2') && (e.KeyChar != '3') && (e.KeyChar != '4') && (e.KeyChar != '5') && (e.KeyChar != '6') && (e.KeyChar != '7') && (e.KeyChar != '8') && (e.KeyChar != '9') && (e.KeyChar != '0') && (e.KeyChar != ',') && ((int)(e.KeyChar) != 8))
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
-        }
 
+        }
         private void tb_km_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar != '1') && (e.KeyChar != '2') && (e.KeyChar != '3') && (e.KeyChar != '4') && (e.KeyChar != '5') && (e.KeyChar != '6') && (e.KeyChar != '7') && (e.KeyChar != '8') && (e.KeyChar != '9') && (e.KeyChar != '0') && (e.KeyChar != ',') && ((int)(e.KeyChar) != 8))
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
-        }
 
+        }
         private void sl_placaCavalo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selecionado;
-            selecionado = sl_placaCavalo.Text;
-            tb_motorista.Enabled = true;
 
-            for (int i = 0; i < listaPlacaCavalo.Length; i++)
-            {
-                if (selecionado == listaPlacaCavalo[i])
-                {
-                    tb_placaCarreta.Text = listaPlacaCarreta[i];
-                    tb_placaCarretaDois.Text = listaPlacaCarretaDois[i];
-                    tb_proprietario.Text = listaProprietario[i];
-                    tb_motorista.Text = listaMotorista[i];
-                    i = listaPlacaCavalo.Length;
-                }
-            }
-            Boolean semUso = leMotoristas(sl_placaCavalo.Text);
-            for (int i = 0; i < 12; i++)
-            {
-                if (itens[i] != null)
-                {
-                    if (itens[i] != "")
-                    {
-                        tb_motorista.Items.Add(itens[i]);
-                    }
-                }
-            }
         }
-
         private void sl_pedido_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selecionado;
-            selecionado = sl_pedido.Text;
 
-            for (int i = 0; i < listaPedido.Length; i++)
-            {
-                if (selecionado == listaPedido[i])
-                {
-                    tb_freteFiscal.Text = listaFreteFiscal[i];
-                    tb_icms.Text = listaICMS[i];
-                    tb_pedagio.Text = listaPedagio[i];
-                    tb_classificacao.Text = listaClassificacao[i];
-                    tb_km.Text = listaKm[i];
-                    tb_cliente.Text = listaCliente[i];
-                    tb_embarcador.Text = listaEmbarcador[i];
-                    tb_estadoOrigem.Text = listaEstadoEmbarcador[i];
-                    tb_destinatario.Text = listaDestinatario[i];
-                    tb_estadoDestino.Text = listaEstadoDestinatario[i];
-                    tb_freteMotorista.Text = listaFreteMotorista[i];
-                    tb_cidadeOrigem.Text = listaCidadeOrigem[i];
-                    tb_cidadeDestino.Text = listaCidadeDestino[i];
-                    i = listaPedido.Length;
-                }
-            }
         }
-
         private void btn_voltar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
             Boolean retorno;
@@ -633,18 +513,46 @@ namespace Gerenciador_de_Transportes
                 string ff = tb_freteFiscal.Text.Trim(new Char[] { ' ', 'R', '$' });
                 string fm = tb_freteMotorista.Text.Trim(new Char[] { ' ', 'R', '$' });
                 string ad = tb_adiantamento.Text.Trim(new Char[] { ' ', 'R', '$' });
-                double freteFFiscal = Convert.ToDouble(ff);
-                double freteMotorista = Convert.ToDouble(fm);
-                double adt = Convert.ToDouble(ad);
+                double freteFFiscal;
+                if (ff.Length == 0)
+                {
+                    freteFFiscal = 0;
+                }
+                else
+                {
+                    freteFFiscal = Convert.ToDouble(ff);
+                }
+
+                double freteMotorista;
+
+                if (fm.Length == 0)
+                {
+                    freteMotorista = 0;
+                }
+                else
+                {
+                    freteMotorista = Convert.ToDouble(fm);
+                }
+
+                double adt;
+                if (ad.Length == 0)
+                {
+                    adt = 0;
+                }
+                else
+                {
+                    adt = Convert.ToDouble(ad);
+                }
                 double margem = ((freteFFiscal - freteMotorista - adt) / (freteFFiscal)) * 100;
                 retorno = BancoDeDados.alterarItemEmbarque(empresa, filial, unidadeEmbarque, cidadeOrigem, estadoOrigem, cidadeDestino, estadoDestino, pedido, previsaoEmbarque, dataEmbarque, previsaoEntrega, dataEntrega, aceite, status, placaCavalo, placaCarreta, placaCarretaDois, proprietario, motorista, freteFiscal, icms, fm, adicional, pedagio, classificacao, adiantamento, meioPagamento, meioPagamentoDois, km, cliente, embarcador, destinatario, load, mercadoria, peso, embalagem, observacao, frota, tb_Empresa.Text, tb_filial.Text, tb_unidadeDeEmbarque.Text, tb_cidadeOrigem.Text, tb_estadoOrigem.Text, tb_cidadeDestino.Text, tb_estadoDestino.Text, sl_pedido.Text, tb_previsaoEmbarque.Text, tb_dataEmbarque.Text, tb_previsaoEntrega.Text, tb_dataEntrega.Text, tb_aceite.Text, tb_status.Text, sl_placaCavalo.Text, tb_placaCarreta.Text, tb_placaCarretaDois.Text, tb_proprietario.Text, tb_motorista.Text, tb_freteFiscal.Text, tb_icms.Text, tb_freteMotorista.Text, tb_adicional.Text, tb_pedagio.Text, tb_classificacao.Text, margem.ToString(), tb_adiantamento.Text, tb_meioPagamento.Text, tb_meioPagamentoDois.Text, tb_km.Text, tb_cliente.Text, tb_embarcador.Text, tb_destinatario.Text, tb_load.Text, tb_mercadoria.Text, tb_peso.Text, tb_embalagem.Text, tb_observacao.Text, tb_frota.Text, "embarqueTodos", usuarioLogado);
-                retorno = BancoDeDados.alterarItemEmbarque(empresa, filial, unidadeEmbarque, cidadeOrigem, estadoOrigem, cidadeDestino, estadoDestino, pedido, previsaoEmbarque, dataEmbarque, previsaoEntrega, dataEntrega, aceite, status, placaCavalo, placaCarreta, placaCarretaDois, proprietario, motorista, freteFiscal, icms, fm, adicional, pedagio, classificacao, adiantamento, meioPagamento, meioPagamentoDois, km, cliente, embarcador, destinatario, load, mercadoria, peso, embalagem, observacao, frota, tb_Empresa.Text, tb_filial.Text, tb_unidadeDeEmbarque.Text, tb_cidadeOrigem.Text, tb_estadoOrigem.Text, tb_cidadeDestino.Text, tb_estadoDestino.Text, sl_pedido.Text, tb_previsaoEmbarque.Text, tb_dataEmbarque.Text, tb_previsaoEntrega.Text, tb_dataEntrega.Text, tb_aceite.Text, tb_status.Text, sl_placaCavalo.Text, tb_placaCarreta.Text, tb_placaCarretaDois.Text, tb_proprietario.Text, tb_motorista.Text, tb_freteFiscal.Text, tb_icms.Text, tb_freteMotorista.Text, tb_adicional.Text, tb_pedagio.Text, tb_classificacao.Text, margem.ToString(), tb_adiantamento.Text, tb_meioPagamento.Text, tb_meioPagamentoDois.Text, tb_km.Text, tb_cliente.Text, tb_embarcador.Text, tb_destinatario.Text, tb_load.Text, tb_mercadoria.Text, tb_peso.Text, tb_embalagem.Text, tb_observacao.Text, tb_frota.Text, contexto, usuarioLogado);
+                retorno = BancoDeDados.alterarItemEmbarque(empresa, filial, unidadeEmbarque, cidadeOrigem, estadoOrigem, cidadeDestino, estadoDestino, pedido, previsaoEmbarque, dataEmbarque, previsaoEntrega, dataEntrega, aceite, status, placaCavalo, placaCarreta, placaCarretaDois, proprietario, motorista, freteFiscal, icms, fm, adicional, pedagio, classificacao, adiantamento, meioPagamento, meioPagamentoDois, km, cliente, embarcador, destinatario, load, mercadoria, peso, embalagem, observacao, frota, tb_Empresa.Text, tb_filial.Text, tb_unidadeDeEmbarque.Text, tb_cidadeOrigem.Text, tb_estadoOrigem.Text, tb_cidadeDestino.Text, tb_estadoDestino.Text, sl_pedido.Text, tb_previsaoEmbarque.Text, tb_dataEmbarque.Text, tb_previsaoEntrega.Text, tb_dataEntrega.Text, tb_aceite.Text, tb_status.Text, sl_placaCavalo.Text, tb_placaCarreta.Text, tb_placaCarretaDois.Text, tb_proprietario.Text, tb_motorista.Text, tb_freteFiscal.Text, tb_icms.Text, tb_freteMotorista.Text, tb_adicional.Text, tb_pedagio.Text, tb_classificacao.Text, margem.ToString() , tb_adiantamento.Text, tb_meioPagamento.Text, tb_meioPagamentoDois.Text, tb_km.Text, tb_cliente.Text, tb_embarcador.Text, tb_destinatario.Text, tb_load.Text, tb_mercadoria.Text, tb_peso.Text, tb_embalagem.Text, tb_observacao.Text, tb_frota.Text, contexto, usuarioLogado);
                 if (!retorno)
                 {
                     MessageBox.Show("Ocorreu um problema!\nContate o desenvolvedor");
                 }
                 else
                 {
+                    MessageBox.Show("Dados cadastrados com sucesso!");
                     this.Close();
                 }
             }

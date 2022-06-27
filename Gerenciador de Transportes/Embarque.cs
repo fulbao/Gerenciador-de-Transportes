@@ -13,147 +13,17 @@ namespace Gerenciador_de_Transportes
 {
     public partial class Embarque : Form
     {
+        List<EmbarqueCs> embarques = new List<EmbarqueCs>();
         string contexto;
         string usuarioLogado;
         int permissao;
+
         public Embarque(string usuario, string contexto)
         {
             InitializeComponent();
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             usuarioLogado = usuario;
             this.contexto = contexto;
-        }
-
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams handleParam = base.CreateParams;
-                handleParam.ExStyle |= 0x02000000;
-                return handleParam;
-            }
-        }
-        public bool leEmbarque(string conte)
-        {
-            string[] itens = new string[39];
-
-            lv_embarque.Items.Clear();
-
-            string deletado;
-
-            try
-            {
-                for (int i = 0; i > -1; i++)
-                {
-                    MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
-                    MySqlCommand usuarioQuery = new MySqlCommand();
-                    MySqlDataReader readerUsuario;
-
-                    usuarioQuery.CommandText = "SELECT * FROM gerenciadortransportes." + conte + " WHERE id = " + (i + 1).ToString();
-                    usuarioQuery.CommandType = CommandType.Text;
-                    usuarioQuery.Connection = conn;
-
-                    conn.Open();
-                    readerUsuario = usuarioQuery.ExecuteReader();
-                    if (!readerUsuario.HasRows) { return true; }
-                    readerUsuario.Read();
-
-                    itens[0] = readerUsuario.GetString(1);
-
-                    itens[1] = readerUsuario.GetString(2);
-
-                    itens[2] = readerUsuario.GetString(3);
-
-                    itens[3] = readerUsuario.GetString(4);
-
-                    itens[4] = readerUsuario.GetString(5);
-
-                    itens[5] = readerUsuario.GetString(6);
-
-                    itens[38] = readerUsuario.GetString(7);
-
-                    itens[6] = readerUsuario.GetString(8);
-
-                    itens[7] = readerUsuario.GetString(9);
-
-                    itens[8] = readerUsuario.GetString(10);
-
-                    itens[9] = readerUsuario.GetString(11);
-
-                    itens[10] = readerUsuario.GetString(12);
-
-                    itens[11] = readerUsuario.GetString(13);
-
-                    itens[12] = readerUsuario.GetString(14);
-
-                    itens[13] = readerUsuario.GetString(15);
-
-                    itens[14] = readerUsuario.GetString(16);
-
-                    itens[15] = readerUsuario.GetString(17);
-
-                    itens[16] = readerUsuario.GetString(18);
-
-                    itens[17] = readerUsuario.GetString(19);
-
-                    itens[18] = readerUsuario.GetString(20);
-
-                    itens[19] = readerUsuario.GetString(21);
-
-                    itens[20] = readerUsuario.GetString(22);
-
-                    itens[21] = readerUsuario.GetString(23);
-
-                    itens[22] = readerUsuario.GetString(24);
-
-                    itens[23] = readerUsuario.GetString(25);
-
-                    itens[24] = readerUsuario.GetString(26);
-
-                    itens[25] = readerUsuario.GetString(27);
-
-                    itens[26] = readerUsuario.GetString(28);
-
-                    itens[27] = readerUsuario.GetString(29);
-
-                    itens[28] = readerUsuario.GetString(30);
-
-                    itens[29] = readerUsuario.GetString(31);
-
-                    itens[30] = readerUsuario.GetString(32);
-
-                    itens[31] = readerUsuario.GetString(33);
-
-                    itens[32] = readerUsuario.GetString(34);
-
-                    itens[33] = readerUsuario.GetString(35);
-
-                    itens[34] = readerUsuario.GetString(36);
-
-                    itens[35] = readerUsuario.GetString(37);
-
-                    itens[36] = readerUsuario.GetString(38);
-
-                    itens[37] = readerUsuario.GetString(39);
-
-                    deletado = readerUsuario.GetString(41);
-
-                    conn.Close();
-
-                    if (deletado == "False")
-                    {
-                        ListViewItem l = new ListViewItem(itens);
-
-                        lv_embarque.Items.Add(l);
-                    }
-                }
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
         }
         private void EmbarqueGloria_Load(object sender, EventArgs e)
         {
@@ -205,6 +75,7 @@ namespace Gerenciador_de_Transportes
                 {
                     MessageBox.Show("Ocorreu um erro! Contate o desenvolvedor!");
                 }
+
                 btn_cadastrar.Visible = false;
                 btn_deletar.Visible = false;
                 btn_editar.Visible = false;
@@ -213,14 +84,79 @@ namespace Gerenciador_de_Transportes
                 tableLayoutPanel1.Visible = false;
                 lv_embarque.Size = new System.Drawing.Size(lv_embarque.Size.Width, (int)(lv_embarque.Size.Height + (lv_embarque.Size.Height * 0.08)));
             }
-            columnHeader1.Width++;
+            organizaDados();
+            CidadeDestino.Width++;
         }
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;
+                return handleParam;
+            }
+        }
+        public void organizaDados()
+        {
+            for (int i = 0; i < embarques.Count; i++)
+            {
+                string[] itensOrganizados = { embarques[i].Empresa, embarques[i].Filial, embarques[i].UnidadeEmbarque, embarques[i].Pedido.CidadeOrigem, embarques[i].Pedido.EstadoEmbarcador, embarques[i].Pedido.CidadeDestino, embarques[i].Pedido.EstadoDestinatario, embarques[i].Pedido.Pedido, embarques[i].PrevisaoEmbarque, embarques[i].DataEmbarque, embarques[i].PrevisaoEntrega, embarques[i].DataEntrega, embarques[i].Aceite, embarques[i].Status, embarques[i].Veiculo.PlacaCavalo, embarques[i].Veiculo.PlacaCarreta, embarques[i].Veiculo.PlacaCarretaSegunda, embarques[i].Veiculo.Proprietario, embarques[i].Veiculo.Motorista, embarques[i].Pedido.FreteFiscal, embarques[i].Pedido.Icms, embarques[i].Pedido.FreteMotorista, embarques[i].Adicional, embarques[i].Pedido.Pedagio, embarques[i].Pedido.Classificacao, embarques[i].Margem, embarques[i].Adiantamento, embarques[i].MeioPagamento, embarques[i].MeioPagamentoDois, embarques[i].Pedido.Km, embarques[i].Pedido.Cliente, embarques[i].Pedido.Embarcador, embarques[i].Pedido.Destinatario, embarques[i].Load, embarques[i].Mercadoria, embarques[i].Peso, embarques[i].Embalagem, embarques[i].Observacao, embarques[i].Frota };
 
+                ListViewItem l = new ListViewItem(itensOrganizados);
+
+                lv_embarque.Items.Add(l);
+            }
+        }
+        public bool leEmbarque(string conte)
+        {
+            lv_embarque.Items.Clear();
+
+            embarques.Clear();
+
+            string deletado;
+
+            try
+            {
+                for (int i = 0; i > -1; i++)
+                {
+                    MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                    MySqlCommand usuarioQuery = new MySqlCommand();
+                    MySqlDataReader readerUsuario;
+
+                    usuarioQuery.CommandText = "SELECT * FROM gerenciadortransportes." + conte + " WHERE id = " + (i + 1).ToString();
+                    usuarioQuery.CommandType = CommandType.Text;
+                    usuarioQuery.Connection = conn;
+
+                    conn.Open();
+                    readerUsuario = usuarioQuery.ExecuteReader();
+                    if (!readerUsuario.HasRows) { return true; }
+                    readerUsuario.Read();
+
+                    deletado = readerUsuario.GetString(41);
+
+                    if (deletado == "False")
+                    {
+                        PedidoCs pedido = new PedidoCs(readerUsuario.GetString("pedido"), readerUsuario.GetString("freteFiscal"), readerUsuario.GetString("icms"), readerUsuario.GetString("pedagio"), readerUsuario.GetString("classificacao"), readerUsuario.GetString("km"), readerUsuario.GetString("cliente"), readerUsuario.GetString("embarcador"), readerUsuario.GetString("estadoOrigem"), readerUsuario.GetString("destinatario"), readerUsuario.GetString("estadoDestino"), readerUsuario.GetString("freteMotorista"), readerUsuario.GetString("cidadeOrigem"), readerUsuario.GetString("cidadeDestino"));
+
+                        VeiculoCs veiculo = new VeiculoCs(readerUsuario.GetString("placaCavalo"), readerUsuario.GetString("placaCarreta"), readerUsuario.GetString("placaSegundaCarreta"), readerUsuario.GetString("proprietario"), readerUsuario.GetString("motorista"));
+
+                        embarques.Add(new EmbarqueCs(pedido, veiculo, readerUsuario.GetString("empresa"), readerUsuario.GetString("filial"), readerUsuario.GetString("unidadeEmbarque"), readerUsuario.GetString("previsaoEmbarque"), readerUsuario.GetString("dataEmbarque"), readerUsuario.GetString("previsaoEntrega"), readerUsuario.GetString("dataEntrega"), readerUsuario.GetString("aceite"), readerUsuario.GetString("adicional"), readerUsuario.GetString("adiantamento"), readerUsuario.GetString("meioPagamento"), readerUsuario.GetString("meioPagamentoDois"), readerUsuario.GetString("lload"), readerUsuario.GetString("mercadoria"), readerUsuario.GetString("peso"), readerUsuario.GetString("embalagem"), readerUsuario.GetString("observacao"), readerUsuario.GetString("frota"), readerUsuario.GetString("sstatus"), readerUsuario.GetString("margem")));
+                    }
+
+                    conn.Close();
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         private void btn_voltar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
             int nivelPermissao = BancoDeDados.lePermissaoUsuario(usuarioLogado, permissao);
@@ -233,9 +169,9 @@ namespace Gerenciador_de_Transportes
                 CadastroEmbarque cadastroEmbarque = new CadastroEmbarque(usuarioLogado, contexto);
                 cadastroEmbarque.ShowDialog();
                 leEmbarque(contexto);
+                organizaDados();
             }
         }
-
         private void btn_deletar_Click(object sender, EventArgs e)
         {
             int nivelPermissao = BancoDeDados.lePermissaoUsuario(usuarioLogado, permissao);
@@ -264,6 +200,7 @@ namespace Gerenciador_de_Transportes
                         {
                             retorno = BancoDeDados.deletarItemEmbarque(lv_embarque.SelectedItems[0].SubItems[0].Text, lv_embarque.SelectedItems[0].SubItems[1].Text, lv_embarque.SelectedItems[0].SubItems[2].Text, lv_embarque.SelectedItems[0].SubItems[3].Text, lv_embarque.SelectedItems[0].SubItems[4].Text, lv_embarque.SelectedItems[0].SubItems[5].Text, lv_embarque.SelectedItems[0].SubItems[38].Text, lv_embarque.SelectedItems[0].SubItems[6].Text, lv_embarque.SelectedItems[0].SubItems[7].Text, lv_embarque.SelectedItems[0].SubItems[8].Text, lv_embarque.SelectedItems[0].SubItems[9].Text, lv_embarque.SelectedItems[0].SubItems[10].Text, lv_embarque.SelectedItems[0].SubItems[11].Text, lv_embarque.SelectedItems[0].SubItems[12].Text, lv_embarque.SelectedItems[0].SubItems[13].Text, lv_embarque.SelectedItems[0].SubItems[14].Text, lv_embarque.SelectedItems[0].SubItems[15].Text, lv_embarque.SelectedItems[0].SubItems[16].Text, lv_embarque.SelectedItems[0].SubItems[17].Text, lv_embarque.SelectedItems[0].SubItems[18].Text, lv_embarque.SelectedItems[0].SubItems[19].Text, lv_embarque.SelectedItems[0].SubItems[20].Text, lv_embarque.SelectedItems[0].SubItems[21].Text, lv_embarque.SelectedItems[0].SubItems[22].Text, lv_embarque.SelectedItems[0].SubItems[23].Text, lv_embarque.SelectedItems[0].SubItems[24].Text, lv_embarque.SelectedItems[0].SubItems[25].Text, lv_embarque.SelectedItems[0].SubItems[26].Text, lv_embarque.SelectedItems[0].SubItems[27].Text, lv_embarque.SelectedItems[0].SubItems[28].Text, lv_embarque.SelectedItems[0].SubItems[29].Text, lv_embarque.SelectedItems[0].SubItems[30].Text, lv_embarque.SelectedItems[0].SubItems[31].Text, lv_embarque.SelectedItems[0].SubItems[32].Text, lv_embarque.SelectedItems[0].SubItems[33].Text, lv_embarque.SelectedItems[0].SubItems[34].Text, lv_embarque.SelectedItems[0].SubItems[35].Text, lv_embarque.SelectedItems[0].SubItems[36].Text, lv_embarque.SelectedItems[0].SubItems[37].Text, "embarqueTodos");
                             retorno = leEmbarque(contexto);
+                            organizaDados();
                             if (!retorno)
                             {
                                 MessageBox.Show("Ocorreu um erro! Contate o desenvolvedor!");
@@ -273,7 +210,6 @@ namespace Gerenciador_de_Transportes
                 }
             }
         }
-
         private void btn_editar_Click(object sender, EventArgs e)
         {
             int nivelPermissao = BancoDeDados.lePermissaoUsuario(usuarioLogado, permissao);
@@ -293,10 +229,10 @@ namespace Gerenciador_de_Transportes
                     EmbarqueEditar embarque = new EmbarqueEditar(lv_embarque.SelectedItems[0].SubItems[0].Text, lv_embarque.SelectedItems[0].SubItems[1].Text, lv_embarque.SelectedItems[0].SubItems[2].Text, lv_embarque.SelectedItems[0].SubItems[3].Text, lv_embarque.SelectedItems[0].SubItems[4].Text, lv_embarque.SelectedItems[0].SubItems[5].Text, lv_embarque.SelectedItems[0].SubItems[38].Text, lv_embarque.SelectedItems[0].SubItems[6].Text, lv_embarque.SelectedItems[0].SubItems[7].Text, lv_embarque.SelectedItems[0].SubItems[8].Text, lv_embarque.SelectedItems[0].SubItems[9].Text, lv_embarque.SelectedItems[0].SubItems[10].Text, lv_embarque.SelectedItems[0].SubItems[11].Text, lv_embarque.SelectedItems[0].SubItems[12].Text, lv_embarque.SelectedItems[0].SubItems[13].Text, lv_embarque.SelectedItems[0].SubItems[14].Text, lv_embarque.SelectedItems[0].SubItems[15].Text, lv_embarque.SelectedItems[0].SubItems[16].Text, lv_embarque.SelectedItems[0].SubItems[17].Text, lv_embarque.SelectedItems[0].SubItems[18].Text, lv_embarque.SelectedItems[0].SubItems[19].Text, lv_embarque.SelectedItems[0].SubItems[20].Text, lv_embarque.SelectedItems[0].SubItems[21].Text, lv_embarque.SelectedItems[0].SubItems[22].Text, lv_embarque.SelectedItems[0].SubItems[23].Text, lv_embarque.SelectedItems[0].SubItems[25].Text, lv_embarque.SelectedItems[0].SubItems[26].Text, lv_embarque.SelectedItems[0].SubItems[27].Text, lv_embarque.SelectedItems[0].SubItems[28].Text, lv_embarque.SelectedItems[0].SubItems[29].Text, lv_embarque.SelectedItems[0].SubItems[30].Text, lv_embarque.SelectedItems[0].SubItems[31].Text, lv_embarque.SelectedItems[0].SubItems[32].Text, lv_embarque.SelectedItems[0].SubItems[33].Text, lv_embarque.SelectedItems[0].SubItems[34].Text, lv_embarque.SelectedItems[0].SubItems[35].Text, lv_embarque.SelectedItems[0].SubItems[36].Text, lv_embarque.SelectedItems[0].SubItems[37].Text, contexto, usuarioLogado);
                     embarque.ShowDialog();
                     Boolean semUso = leEmbarque(contexto);
+                    organizaDados();
                 }
             }
         }
-
         private void btn_usuario_Click(object sender, EventArgs e)
         {
             int nivelPermissao = BancoDeDados.lePermissaoUsuario(usuarioLogado, 12);
@@ -329,9 +265,9 @@ namespace Gerenciador_de_Transportes
                 }
             }
         }
-
         private void lv_embarque_ColumnClick(object sender, ColumnClickEventArgs e)
         {
+            MessageBox.Show(e.ToString(), "fffffffffffffffff");
         }
     }
 }
