@@ -126,14 +126,14 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="tb_senha.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 226</value>
+    <value>46, 143</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tb_senha.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
     <value>*</value>
   </data>
   <data name="tb_senha.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 26</value>
+    <value>194, 26</value>
   </data>
   <data name="tb_senha.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -151,7 +151,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;tb_senha.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="tb_usuario.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -160,10 +160,10 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="tb_usuario.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 143</value>
+    <value>46, 50</value>
   </data>
   <data name="tb_usuario.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 26</value>
+    <value>194, 26</value>
   </data>
   <data name="tb_usuario.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -181,7 +181,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;tb_usuario.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>2</value>
   </data>
   <data name="btn_Entrar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -190,13 +190,13 @@
     <value>Flat</value>
   </data>
   <data name="btn_Entrar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 11.25pt</value>
+    <value>Arial, 11.25pt, style=Bold</value>
   </data>
   <data name="btn_Entrar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btn_Entrar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 291</value>
+    <value>94, 367</value>
   </data>
   <data name="btn_Entrar.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 30</value>
@@ -214,28 +214,28 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_Entrar.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_Entrar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
+    <value>Left</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 14.25pt</value>
+    <value>Arial, 12pt</value>
   </data>
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 106</value>
+    <value>46, 8</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 22</value>
+    <value>66, 18</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -253,25 +253,25 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
+    <value>Left</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 14.25pt</value>
+    <value>Arial, 12pt</value>
   </data>
   <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>91, 183</value>
+    <value>46, 100</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 22</value>
+    <value>57, 18</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -289,7 +289,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="tableLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -329,7 +329,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 140</value>
+    <value>3, 47</value>
   </data>
   <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 32</value>
@@ -347,7 +347,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;pictureBox3.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>1</value>
   </data>
   <data name="pictureBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -374,7 +374,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 223</value>
+    <value>3, 140</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 32</value>
@@ -394,72 +394,14 @@
   <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="pictureBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        eg96auo/yHQcDSKgrgsAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 3</value>
-  </data>
-  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 64</value>
-  </data>
-  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 39</value>
+    <value>35, 156</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 350</value>
+    <value>243, 187</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -474,10 +416,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btn_Entrar" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tb_senha" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="pictureBox3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="pictureBox2" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tb_usuario" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="pictureBox1" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Absolute,175,Percent,50,Absolute,20" /&gt;&lt;Rows Styles="Percent,81,6,Percent,18,4,Absolute,54,Absolute,32,Absolute,48,Absolute,86" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label2" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="pictureBox3" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tb_usuario" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tb_senha" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="pictureBox2" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,Absolute,200" /&gt;&lt;Rows Styles="Percent,18,18182,Percent,31,81818,Percent,18,18,Percent,31,82" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -543,10 +485,40 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btn_Close" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,33333,Percent,33,33333,Percent,33,33333" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="pictureBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pictureBox1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 39</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 111</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

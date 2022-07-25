@@ -649,3 +649,7 @@ D:\Downloads\Gerenciador de Transportes\Gerenciador de Transportes\obj\Debug\Ger
 D:\Downloads\Gerenciador de Transportes\Gerenciador de Transportes\obj\Debug\Gerenciador_de_Transportes.Telas.Utilitarias.ModalSucesso.resources
 D:\Downloads\Gerenciador de Transportes\Gerenciador de Transportes\obj\Debug\Gerenciador_de_Transportes.Telas.Utilitarias.ModalYN.resources
 D:\Downloads\Gerenciador de Transportes\Gerenciador de Transportes\obj\Debug\Gerenciador_de_Transportes.Telas.Utilitarias.UsuarioSelecionado.resources
+C:\Desenvolvimento\Gerenciador de Transportes\Gerenciador de Transportes\bin\Debug\Gerenciador de Transportes.exe.manifest
+C:\Desenvolvimento\Gerenciador de Transportes\Gerenciador de Transportes\bin\Debug\Gerenciador de Transportes.application
+C:\Desenvolvimento\Gerenciador de Transportes\Gerenciador de Transportes\obj\Debug\Gerenciador de Transportes.exe.manifest
+C:\Desenvolvimento\Gerenciador de Transportes\Gerenciador de Transportes\obj\Debug\Gerenciador de Transportes.application

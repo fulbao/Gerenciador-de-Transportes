@@ -47,7 +47,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tb_Texto, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tb_Titulo, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 10);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.21212F));
@@ -96,10 +96,10 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172F));
-            this.tableLayoutPanel2.Controls.Add(this.btn_No, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btn_Yes, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btn_No, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btn_Yes, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(127, 275);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -113,7 +113,7 @@
             this.btn_No.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_No.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_No.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_No.Location = new System.Drawing.Point(181, 3);
+            this.btn_No.Location = new System.Drawing.Point(9, 3);
             this.btn_No.Name = "btn_No";
             this.btn_No.Size = new System.Drawing.Size(152, 32);
             this.btn_No.TabIndex = 163;
@@ -128,7 +128,7 @@
             this.btn_Yes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Yes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Yes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Yes.Location = new System.Drawing.Point(9, 3);
+            this.btn_Yes.Location = new System.Drawing.Point(181, 3);
             this.btn_Yes.Name = "btn_Yes";
             this.btn_Yes.Size = new System.Drawing.Size(152, 32);
             this.btn_Yes.TabIndex = 162;
@@ -145,7 +145,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ModalYN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModalYN";

@@ -89,7 +89,7 @@ namespace Gerenciador_de_Transportes
             {
                 string[] itens = new string[4];
                 string[] pintes = new string[4];
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 MySqlCommand usuarioQuery = new MySqlCommand();
                 MySqlDataReader readerUsuario;
 
@@ -117,7 +117,7 @@ namespace Gerenciador_de_Transportes
                 pintes[2] = itens[2].Trim('.');
                 pintes[3] = itens[3].Trim('.');
 
-                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
                 Conexao.Open();
 

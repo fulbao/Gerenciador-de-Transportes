@@ -227,7 +227,7 @@ namespace Gerenciador_de_Transportes
                 for (int i = 0; i > -1; i++)
                 {
                     string deletado;
-                    MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                    MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                     MySqlCommand usuarioQuery = new MySqlCommand();
                     MySqlDataReader readerUsuario;
 
@@ -270,7 +270,7 @@ namespace Gerenciador_de_Transportes
                 for (int i = 0; i > -1; i++)
                 {
                     string deletado;
-                    MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                    MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                     MySqlCommand usuarioQuery = new MySqlCommand();
                     MySqlDataReader readerUsuario;
 
@@ -317,7 +317,7 @@ namespace Gerenciador_de_Transportes
                 for (int i = 0; i > -1; i++)
                 {
                     string deletado;
-                    MySqlConnection conne = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                    MySqlConnection conne = new MySqlConnection("server=localhost;uid=root;pwd=root");
                     MySqlCommand usuarioQuerye = new MySqlCommand();
                     MySqlDataReader readerUsuarioe;
 
@@ -356,7 +356,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 MySqlCommand usuarioQuery = new MySqlCommand();
                 MySqlDataReader readerUsuario;
 

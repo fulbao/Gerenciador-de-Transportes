@@ -19,7 +19,7 @@ namespace Gerenciador_de_Transportes.ConexaoBanco.BancoSelects
 
         public static void criarTabelaEmbalagem()
         {
-            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
             Conexao.Open();
 
@@ -43,7 +43,7 @@ namespace Gerenciador_de_Transportes.ConexaoBanco.BancoSelects
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 MySqlCommand usuarioQuery = new MySqlCommand();
                 MySqlDataReader readerUsuario;
 
@@ -70,7 +70,7 @@ namespace Gerenciador_de_Transportes.ConexaoBanco.BancoSelects
 
         public static void valoresPadrao()
         {
-            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
             Conexao.Open();
 
@@ -88,7 +88,7 @@ namespace Gerenciador_de_Transportes.ConexaoBanco.BancoSelects
 
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 conn.Open();
 
                 string query = "SELECT* FROM gerenciadortransportes.embalagem";

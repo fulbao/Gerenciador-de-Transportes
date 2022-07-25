@@ -21,7 +21,7 @@ namespace Gerenciador_de_Transportes
             {
                 try
                 {
-                    Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                    Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
                     Conexao.Open();
 
@@ -34,7 +34,7 @@ namespace Gerenciador_de_Transportes
                 {
                     if (ex.GetType() != typeof(KeyNotFoundException))
                     {
-                        ModalErro modal = new ModalErro("Atençãod!", "Ocorreu um erro na criação do banco de dados, contate o desenvolvimento");
+                        ModalErro modal = new ModalErro("Atenção!", "Ocorreu um erro na criação do banco de dados, contate o desenvolvimento");
                         modal.ShowDialog();
                     }
                 }

@@ -87,7 +87,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 MySqlCommand usuarioQuery = new MySqlCommand();
                 MySqlDataReader readerUsuario;
 

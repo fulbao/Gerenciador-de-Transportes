@@ -15,7 +15,7 @@ namespace Gerenciador_de_Transportes
 
         public static void criarTabelaMotorista()
         {
-            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
             Conexao.Open();
 
@@ -37,7 +37,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
                 Conexao.Open();
 
@@ -58,7 +58,7 @@ namespace Gerenciador_de_Transportes
         public static int retornaId(string motorista, string telefone, string contatoEmergencia, string telefoneEmergencia) {
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 conn.Open();
 
                 string query = "SELECT * FROM gerenciadortransportes.motoristas where nome = '"+ motorista + "' AND telefone = '" + telefone + "' AND nomeEmergencia = '" + contatoEmergencia + "' AND telefoneEmergencia = '" + telefoneEmergencia + "';";
@@ -90,7 +90,7 @@ namespace Gerenciador_de_Transportes
 
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 conn.Open();
 
                 string query = "SELECT* FROM gerenciadortransportes.motoristas order by nome";
@@ -125,7 +125,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
                 Conexao.Open();
 
@@ -146,7 +146,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
                 Conexao.Open();
 

@@ -15,7 +15,7 @@ namespace Gerenciador_de_Transportes
 
         public static void criarTabelaUsuario ()
         {
-            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+            Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
             Conexao.Open();
 
@@ -43,7 +43,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 MySqlCommand usuarioQuery = new MySqlCommand();
                 MySqlDataReader readerUsuario;
 
@@ -73,7 +73,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 MySqlCommand senhaQuery = new MySqlCommand();
                 MySqlDataReader readerSenha;
 
@@ -103,7 +103,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 MySqlCommand senhaQuery = new MySqlCommand();
                 MySqlDataReader readerSenha;
 
@@ -135,7 +135,7 @@ namespace Gerenciador_de_Transportes
             string nivelPermissao;
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 MySqlCommand usuarioQuery = new MySqlCommand();
                 MySqlDataReader readerUsuario;
 
@@ -172,7 +172,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 MySqlCommand usuarioQuery = new MySqlCommand();
                 MySqlDataReader readerUsuario;
 
@@ -207,7 +207,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 MySqlCommand usuarioQuery = new MySqlCommand();
                 MySqlDataReader readerUsuario;
 
@@ -242,7 +242,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 MySqlCommand usuarioQuery = new MySqlCommand();
                 MySqlDataReader readerUsuario;
 
@@ -276,7 +276,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 MySqlCommand usuarioQuery = new MySqlCommand();
                 MySqlDataReader readerUsuario;
 
@@ -310,7 +310,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 MySqlCommand usuarioQuery = new MySqlCommand();
                 MySqlDataReader readerUsuario;
 
@@ -344,7 +344,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 MySqlCommand usuarioQuery = new MySqlCommand();
                 MySqlDataReader readerUsuario;
 
@@ -379,7 +379,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
                 Conexao.Open();
 
@@ -401,7 +401,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
                 Conexao.Open();
 
@@ -422,7 +422,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
                 Conexao.Open();
 
@@ -442,7 +442,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
                 Conexao.Open();
 
@@ -465,7 +465,7 @@ namespace Gerenciador_de_Transportes
 
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;pwd=root");
                 conn.Open();
 
                 string query = "SELECT* FROM gerenciadortransportes.usuario";

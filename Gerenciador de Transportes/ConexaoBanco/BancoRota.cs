@@ -14,7 +14,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
                 Conexao.Open();
 
@@ -42,7 +42,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
                 Conexao.Open();
 
@@ -64,7 +64,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
                 Conexao.Open();
 
@@ -86,7 +86,7 @@ namespace Gerenciador_de_Transportes
         {
             try
             {
-                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=s4FGn95");
+                Conexao = new MySqlConnection("server=localhost;uid=root;pwd=root");
 
                 Conexao.Open();
 
